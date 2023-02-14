@@ -1,8 +1,9 @@
 from analyzer import Analyzer
+from readers.file_content_reader import FileContentReader
 
-with open("./books/frankenstein.txt") as file:
-    book_content = file.read()
 
-analyzer = Analyzer(book_content)
+content = FileContentReader("./books/Profile.pdf").read_file()
+
+analyzer = Analyzer(content)
 
 print(analyzer)

@@ -54,3 +54,25 @@ def test_analyzer_count_words():
     sut = Analyzer(test_phrase)
 
     assert sut.count_words() == 9
+
+
+def test_analyzer_str():
+    """Test that Analyzer __str__ method works correctly."""
+    test_phrase = "This is a test phrase with !@#$%^&*()_+ special characters"
+    sut = Analyzer(test_phrase)
+
+    assert str(sut) == (
+        "---- Begin report ----\n"
+        "9 words found in the text\n\n"
+        "The character a was found 5 times in the text\n"
+        "The character c was found 3 times in the text\n"
+        "The character e was found 4 times in the text\n"
+        "The character h was found 4 times in the text\n"
+        "The character i was found 4 times in the text\n"
+        "The character l was found 1 times in the text\n"
+        "The character p was found 2 times in the text\n"
+        "The character r was found 3 times in the text\n"
+        "The character s was found 6 times in the text\n"
+        "The character t was found 5 times in the text\n"
+        "The character w was found 1 times in the text\n"
+    )

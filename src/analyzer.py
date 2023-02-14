@@ -23,3 +23,17 @@ class Analyzer:
     def count_words(self):
         words_count = len(self._content.split())
         return words_count
+
+    def __str__(self) -> str:
+        report = (
+            "---- Begin report ----\n"
+            f"{self.count_words()} words found in the text\n\n"
+        )
+
+        for key in self.generate_letters_log():
+            report += (
+                f"The character {key} was found "
+                f"{self.generate_letters_log()[key]} times in the text\n"
+            )
+
+        return report
